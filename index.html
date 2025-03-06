@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>Advanced QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>QR Code Generator</h1>
+        <h1>Advanced QR Code Generator</h1>
         <label for="qr-input">Enter URL or Text:</label>
         <input type="text" id="qr-input" placeholder="Enter URL or text here" aria-label="Input for QR code text">
+        
+        <label for="qr-size">Select Size:</label>
+        <select id="qr-size" aria-label="Select QR code size">
+            <option value="200">200x200</option>
+            <option value="300">300x300</option>
+            <option value="400">400x400</option>
+        </select>
+
+        <label for="qr-color">Select Color:</label>
+        <input type="color" id="qr-color" value="#000000" aria-label="Select QR code color">
+
         <button id="generate-btn">Generate QR Code</button>
+        <button id="download-btn" style="display:none;">Download QR Code</button>
+        
         <div id="qr-code" aria-live="polite"></div>
     </div>
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </body>
 </html>
